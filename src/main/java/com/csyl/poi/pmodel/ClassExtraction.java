@@ -1,7 +1,6 @@
-package com.csyl.poi.pmodel.extraction;
+package com.csyl.poi.pmodel;
 
-import com.csyl.poi.pmodel.BaseMatch;
-import com.csyl.poi.pmodel.DataMatch;
+import com.csyl.poi.pmodel.extraction.TableAdapter;
 
 import java.io.InputStream;
 import java.lang.reflect.Field;
@@ -20,6 +19,21 @@ import java.util.function.Function;
 public abstract class ClassExtraction {
 
     protected static Map<String, ClassExtraction> InstanceContext = new HashMap<>(2);
+
+    static {
+        ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
+        try {
+            Class.forName("com.csyl.poi.pmodel.extraction.ExeclClassExtraction",
+                    true,
+                    systemClassLoader);
+            Class.forName("com.csyl.poi.pmodel.extraction.CsvClassExtraction",
+                    true,
+                    systemClassLoader);
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * @param adapter

@@ -1,7 +1,8 @@
 package com.csyl.poi.pmodel.extraction;
 
 import com.csvreader.CsvReader;
-import com.csyl.poi.pmodel.AssertUtil;
+import com.csyl.poi.pmodel.ClassExtraction;
+import com.csyl.poi.pmodel.util.AssertUtil;
 import com.csyl.poi.pmodel.BaseMatch;
 
 import java.io.IOException;

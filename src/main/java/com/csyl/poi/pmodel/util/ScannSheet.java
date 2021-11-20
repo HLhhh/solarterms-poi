@@ -1,5 +1,8 @@
-package com.csyl.poi.pmodel;
+package com.csyl.poi.pmodel.util;
 
+
+import com.csyl.poi.pmodel.BaseMatch;
+import com.csyl.poi.pmodel.DataMatch;
 
 import java.io.File;
 import java.net.URISyntaxException;
@@ -15,7 +18,7 @@ public class ScannSheet {
         String packageDirName = packageName
                 .replace('.', '/');
 
-        URL resource = Application.class.getClassLoader().getResource(packageDirName);
+        URL resource = ScannSheet.class.getClassLoader().getResource(packageDirName);
         File file = new File(resource.toURI());
         if (file.isDirectory()) {
             File[] tempList = file.listFiles();
