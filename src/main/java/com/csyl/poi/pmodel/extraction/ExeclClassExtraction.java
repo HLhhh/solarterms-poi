@@ -1,6 +1,5 @@
 package com.csyl.poi.pmodel.extraction;
 
-import com.csyl.poi.pmodel.ClassExtraction;
 import com.csyl.poi.pmodel.util.AssertUtil;
 import com.csyl.poi.pmodel.BaseMatch;
 import org.apache.poi.ss.usermodel.Cell;

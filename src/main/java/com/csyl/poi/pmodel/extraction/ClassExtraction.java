@@ -1,6 +1,7 @@
-package com.csyl.poi.pmodel;
+package com.csyl.poi.pmodel.extraction;
 
-import com.csyl.poi.pmodel.extraction.TableAdapter;
+import com.csyl.poi.pmodel.BaseMatch;
+import com.csyl.poi.pmodel.DataMatch;
 
 import java.io.InputStream;
 import java.lang.reflect.Field;
