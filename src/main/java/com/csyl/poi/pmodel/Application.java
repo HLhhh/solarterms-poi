@@ -13,6 +13,7 @@ public class Application {
 
     public static void main(String[] args) throws Exception {
 
+        ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
         Class.forName("com.csyl.poi.pmodel.extraction.ExeclClassExtraction",
                 true,
                 systemClassLoader);
@@ -21,8 +22,6 @@ public class Application {
                 systemClassLoader);
 
         String fileName = "test.csv";
-        ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
-
         InputStream resourceAsStream = systemClassLoader.getResourceAsStream(new String(fileName.getBytes(StandardCharsets.UTF_8)));
 
         Collection<Test> adapter = ClassExtraction.adapter(fileName, resourceAsStream, Test.class);
