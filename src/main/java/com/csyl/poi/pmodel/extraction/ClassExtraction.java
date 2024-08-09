@@ -112,8 +112,9 @@ public abstract class ClassExtraction {
         while (tIterator.hasNext()) {
             T item = tIterator.next();
             Field field = valueFieldMap.get(action.apply(item));
+            int incIndex = count.getAndIncrement();
             if (field == null) continue;
-            yAndFileMap.put(count.getAndIncrement(), field);
+            yAndFileMap.put(incIndex, field);
         }
 
         return Collections.unmodifiableMap(yAndFileMap);
