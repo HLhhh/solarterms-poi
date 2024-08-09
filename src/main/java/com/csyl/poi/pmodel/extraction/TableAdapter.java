@@ -168,6 +168,13 @@ public class TableAdapter {
             csvReader.readHeaders();
             String[] headers = csvReader.getHeaders();
             if (headers.length > 1) {
+                for (int i = 0, headersLength = headers.length; i < headersLength; i++) {
+                    String header = headers[i];
+                    // 去除 BOM
+                    if (header.startsWith("\uFEFF")) {
+                        headers[i] = header.substring(1);
+                    }
+                }
                 return new Tuple2<>(headers, csvReader);
             }
             csvReader.close();
